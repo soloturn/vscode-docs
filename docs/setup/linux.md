@@ -50,7 +50,8 @@ Installing the .deb package will automatically install the apt repository and si
 ```bash
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
-sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+sudo sh -c 'echo "deb [
+=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
 ```
 
 Then update the package cache and install the package using:
@@ -102,12 +103,12 @@ sudo zypper refresh
 sudo zypper install code
 ```
 
-### AUR package for Arch Linux
+### Arch Linux based distributions
 
-There is a community maintained [Arch User Repository package for VS Code](https://aur.archlinux.org/packages/visual-studio-code-bin).
-
-To get more information about the installation from the AUR, please consult the following wiki entry:
-[Install AUR Packages](https://wiki.archlinux.org/index.php/Arch_User_Repository#Build_and_install_the_package).
+There is an offical package, https://archlinux.org/packages/community/x86_64/code/, install via:
+```bash
+sudo pacman -S code
+```
 
 ### Nix package for NixOS (or any Linux distribution using Nix package manager)
 
